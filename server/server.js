@@ -20,7 +20,7 @@ app.use(
 );
 
 mongoose
-  .connect("mongodb://localhost:27017/cargo_scanner", {
+  .connect(process.env.MONGO_DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
