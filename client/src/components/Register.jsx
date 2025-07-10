@@ -372,7 +372,7 @@ const Register = () => {
                           </InputAdornment>
                         }
                       >
-                        <MenuItem value="admin">Administrator</MenuItem>
+                        <MenuItem value="administrator">Administrator</MenuItem>
                         <MenuItem value="manager">Manager</MenuItem>
                         <MenuItem value="employee">Employee</MenuItem>
                         <MenuItem value="customer">Customer</MenuItem>
@@ -476,7 +476,7 @@ const Register = () => {
                         <MenuItem value="male">Male</MenuItem>
                         <MenuItem value="female">Female</MenuItem>
                         <MenuItem value="other">Other</MenuItem>
-                        <MenuItem value="prefer_not_to_say">
+                        <MenuItem value="prefer not to say">
                           Prefer not to say
                         </MenuItem>
                       </Select>

@@ -38,7 +38,7 @@ router.post("/register", async (req, res) => {
       role,
       mobileNumber,
       address,
-      dob,
+      dob: new Date(dob), // Convert string to Date
       gender,
     });
 

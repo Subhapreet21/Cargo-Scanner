@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductQRCodeGenerator from "./components/ProductQRCodeGenerator";
@@ -8,11 +13,22 @@ import Navbar from "./components/Navbar";
 import PrivateRoute from "./PrivateRoute";
 
 function App() {
+  const isAuthenticated = !!localStorage.getItem("authToken");
+
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route
+          path="/"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/productQRCodeGenerator" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
